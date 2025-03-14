@@ -11,5 +11,15 @@ config_version=5
 [application]
 
 config/name="GamJam"
+run/main_scene="uid://dyttrsc07jxh6"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=960
+window/size/window_height_override=540
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"

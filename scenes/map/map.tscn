@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b37gi2wg7rl5c"]
+
+[node name="Map" type="Node2D"]
+
+[node name="Level" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Background" type="TileMapLayer" parent="Level"]
+
+[node name="TowerSlot" type="TileMapLayer" parent="Level"]
+
+[node name="Tower" type="TileMapLayer" parent="Level"]
