@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://bg2k7cwdy2y1w"]
+
+[ext_resource type="Texture2D" uid="uid://brwwq7grjlyqk" path="res://assets/textures/menu.jpg" id="1_h1w4e"]
+[ext_resource type="Script" uid="uid://cp8t6xavkjnan" path="res://scenes/ui/menu/menu.gd" id="1_ldhvw"]
+[ext_resource type="Texture2D" uid="uid://d3cyopo37nqrn" path="res://assets/textures/logo.jpg" id="2_q18yf"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ldhvw")
+
+[node name="BackgroundTextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_h1w4e")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = 60.0
+offset_right = 150.0
+offset_bottom = 299.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Start"
+
+[node name="OptionButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Opcje"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Wyjście"
+
+[node name="LogoTextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -268.0
+offset_top = -390.0
+offset_right = 268.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_q18yf")
+expand_mode = 1
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start"]
+[connection signal="pressed" from="VBoxContainer/OptionButton" to="." method="_on_option"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit"]
