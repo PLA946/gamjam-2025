@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://fuhp61ih2drr"]
 
 [ext_resource type="Script" uid="uid://4evq44pe8jg6" path="res://scenes/audio/audio_controler.gd" id="1_h1gvp"]
-[ext_resource type="AudioStream" uid="uid://lvwyjdtjvi8o" path="res://assets/audio/a_seafaring_adventure.mp3" id="2_h1gvp"]
+[ext_resource type="AudioStream" uid="uid://lvwyjdtjvi8o" path="res://assets/audio/defending_the_village.mp3" id="2_h1gvp"]
 
 [node name="AudioControler" type="Node"]
 script = ExtResource("1_h1gvp")
