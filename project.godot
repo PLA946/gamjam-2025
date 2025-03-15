@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 AudioControler="*res://scenes/audio/audio_controler.tscn"
+GameEvents="*res://scenes/autoload/game_events.gd"
 
 [display]
 
@@ -27,3 +28,13 @@ window/size/window_width_override=960
 window/size/window_height_override=540
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[global_group]
+
+enemy="hostile entity"
+
+[layer_names]
+
+2d_physics/layer_1="environment"
+2d_physics/layer_2="other_entities"
+2d_physics/layer_3="same_entities"

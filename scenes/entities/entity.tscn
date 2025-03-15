@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://0dulojlalktd"]
+
+[ext_resource type="Script" uid="uid://di23y2knnsww7" path="res://scenes/entities/entity.gd" id="1_wcjeu"]
+
+[node name="Entity" type="Node2D"]
+script = ExtResource("1_wcjeu")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
