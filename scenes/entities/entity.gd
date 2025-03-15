@@ -12,8 +12,6 @@ func _ready() -> void:
 
 
 func receive_damage(target: Entity, amount: int):
-	#if Entity == self:
-		
 	hp = max(hp, 0)
 	if hp == 0:
 		queue_free()
