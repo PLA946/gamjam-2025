@@ -1,7 +1,10 @@
 extends Control
 
 func _ready() -> void:
-	AudioControler.play_music()
+	AudioControler.play_music(randi_range(0, AudioControler.playlist.size()-1))
+	if AudioControler.bg_music.stream == null:
+		AudioControler.play_music(0)
+		
 	$Option.visible = false
 
 func _on_start() -> void:
