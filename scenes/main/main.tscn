@@ -1,36 +1,129 @@
 [gd_scene load_steps=5 format=3 uid="uid://doswmkfbyotfs"]
 
-[ext_resource type="Texture2D" uid="uid://dttk421mtylh0" path="res://assets/textures/lviv3.jpg" id="1_hyk8p"]
 [ext_resource type="Texture2D" uid="uid://c843ue4ccn85l" path="res://assets/textures/icons/unchecked.png" id="2_k2fmo"]
 [ext_resource type="Script" uid="uid://ctmf74yf581r7" path="res://scenes/main/level_position.gd" id="2_l3cfh"]
 [ext_resource type="Texture2D" uid="uid://d0v6m88hxcg8l" path="res://assets/textures/icons/checked.png" id="3_l3cfh"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3cfh"]
+content_margin_left = 15.0
+content_margin_top = 5.0
+content_margin_right = 15.0
+content_margin_bottom = 5.0
+bg_color = Color(0.0196078, 0.0509804, 0.376471, 0.705882)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [node name="main" type="Node2D"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(1920, 1080)
-offset_right = 1920.0
-offset_bottom = 1080.0
-texture = ExtResource("1_hyk8p")
-
-[node name="LevelPosition" type="Control" parent="."]
+[node name="Background" type="Control" parent="."]
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+
+[node name="LevelPosition" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("2_l3cfh")
 
-[node name="TextureButton" type="TextureButton" parent="LevelPosition"]
+[node name="Level_1" type="TextureButton" parent="LevelPosition"]
 custom_minimum_size = Vector2(50, 50)
-layout_mode = 1
-offset_left = 286.0
-offset_top = 267.0
-offset_right = 336.0
-offset_bottom = 317.0
+layout_mode = 0
+offset_left = 418.0
+offset_top = 139.0
+offset_right = 468.0
+offset_bottom = 189.0
 texture_normal = ExtResource("2_k2fmo")
 texture_hover = ExtResource("3_l3cfh")
 
-[connection signal="pressed" from="LevelPosition/TextureButton" to="LevelPosition" method="_on_level_1"]
+[node name="Level_2" type="TextureButton" parent="LevelPosition"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 195.0
+offset_top = 390.0
+offset_right = 245.0
+offset_bottom = 440.0
+texture_normal = ExtResource("2_k2fmo")
+texture_hover = ExtResource("3_l3cfh")
+
+[node name="Level_3" type="TextureButton" parent="LevelPosition"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 637.0
+offset_top = 590.0
+offset_right = 687.0
+offset_bottom = 640.0
+texture_normal = ExtResource("2_k2fmo")
+texture_hover = ExtResource("3_l3cfh")
+
+[node name="Level_4" type="TextureButton" parent="LevelPosition"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 1008.0
+offset_top = 520.0
+offset_right = 1058.0
+offset_bottom = 570.0
+texture_normal = ExtResource("2_k2fmo")
+texture_hover = ExtResource("3_l3cfh")
+
+[node name="Level_5" type="TextureButton" parent="LevelPosition"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 1427.0
+offset_top = 712.0
+offset_right = 1477.0
+offset_bottom = 762.0
+texture_normal = ExtResource("2_k2fmo")
+texture_hover = ExtResource("3_l3cfh")
+
+[node name="Level_6" type="TextureButton" parent="LevelPosition"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 1726.0
+offset_top = 902.0
+offset_right = 1776.0
+offset_bottom = 952.0
+texture_normal = ExtResource("2_k2fmo")
+texture_hover = ExtResource("3_l3cfh")
+
+[node name="TooltipLabel" type="Label" parent="LevelPosition"]
+visible = false
+layout_mode = 0
+offset_left = 395.0
+offset_top = 349.0
+offset_right = 498.0
+offset_bottom = 424.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_l3cfh")
+
+[connection signal="mouse_entered" from="LevelPosition/Level_1" to="LevelPosition" method="_on_level_me1"]
+[connection signal="mouse_exited" from="LevelPosition/Level_1" to="LevelPosition" method="_on_level_ex"]
+[connection signal="pressed" from="LevelPosition/Level_1" to="LevelPosition" method="_on_level_1"]
+[connection signal="mouse_entered" from="LevelPosition/Level_2" to="LevelPosition" method="_on_level_me2"]
+[connection signal="mouse_exited" from="LevelPosition/Level_2" to="LevelPosition" method="_on_level_ex"]
+[connection signal="pressed" from="LevelPosition/Level_2" to="LevelPosition" method="_on_level_2"]
+[connection signal="mouse_entered" from="LevelPosition/Level_3" to="LevelPosition" method="_on_level_me3"]
+[connection signal="mouse_exited" from="LevelPosition/Level_3" to="LevelPosition" method="_on_level_ex"]
+[connection signal="pressed" from="LevelPosition/Level_3" to="LevelPosition" method="_on_level_3"]
+[connection signal="mouse_entered" from="LevelPosition/Level_4" to="LevelPosition" method="_on_level_me4"]
+[connection signal="mouse_exited" from="LevelPosition/Level_4" to="LevelPosition" method="_on_level_ex"]
+[connection signal="pressed" from="LevelPosition/Level_4" to="LevelPosition" method="_on_level_4"]
+[connection signal="mouse_entered" from="LevelPosition/Level_5" to="LevelPosition" method="_on_level_me5"]
+[connection signal="mouse_exited" from="LevelPosition/Level_5" to="LevelPosition" method="_on_level_ex"]
+[connection signal="pressed" from="LevelPosition/Level_5" to="LevelPosition" method="_on_level_5"]
+[connection signal="mouse_entered" from="LevelPosition/Level_6" to="LevelPosition" method="_on_level_me6"]
+[connection signal="mouse_exited" from="LevelPosition/Level_6" to="LevelPosition" method="_on_level_ex"]
+[connection signal="pressed" from="LevelPosition/Level_6" to="LevelPosition" method="_on_level_6"]
