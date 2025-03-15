@@ -1,8 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://bg2k7cwdy2y1w"]
+[gd_scene load_steps=13 format=3 uid="uid://bg2k7cwdy2y1w"]
 
 [ext_resource type="Texture2D" uid="uid://brwwq7grjlyqk" path="res://assets/textures/menu.jpg" id="1_h1w4e"]
 [ext_resource type="Script" uid="uid://cp8t6xavkjnan" path="res://scenes/ui/menu/menu.gd" id="1_ldhvw"]
 [ext_resource type="Texture2D" uid="uid://d3cyopo37nqrn" path="res://assets/textures/logo.jpg" id="2_q18yf"]
+[ext_resource type="Script" uid="uid://d286eujbrggnw" path="res://scenes/ui/menu/option.gd" id="4_r4xos"]
+[ext_resource type="Texture2D" uid="uid://cumvwia1lnfy1" path="res://assets/textures/icons/x_normal.png" id="5_5gbuo"]
+[ext_resource type="Texture2D" uid="uid://nsaqnt6va5br" path="res://assets/textures/icons/x_hovered.png" id="6_047m5"]
+[ext_resource type="Texture2D" uid="uid://d0v6m88hxcg8l" path="res://assets/textures/icons/checked.png" id="7_047m5"]
+[ext_resource type="Texture2D" uid="uid://c843ue4ccn85l" path="res://assets/textures/icons/unchecked.png" id="8_1316l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5gbuo"]
+content_margin_left = 30.0
+content_margin_top = 20.0
+content_margin_right = 30.0
+content_margin_bottom = 20.0
+bg_color = Color(0, 0, 0, 0.72549)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1316l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2nsh4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_afxhl"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -70,6 +98,131 @@ grow_vertical = 2
 texture = ExtResource("2_q18yf")
 expand_mode = 1
 
+[node name="Option" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_r4xos")
+
+[node name="PanelContainer" type="PanelContainer" parent="Option"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -98.0
+offset_right = 400.0
+offset_bottom = 98.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5gbuo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Option/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="XTextureButton" type="TextureButton" parent="Option/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture_normal = ExtResource("5_5gbuo")
+texture_hover = ExtResource("6_047m5")
+
+[node name="MusicVBoxContainer" type="VBoxContainer" parent="Option/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MusicLabel" type="Label" parent="Option/PanelContainer/VBoxContainer/MusicVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Muzyka"
+
+[node name="MusicHSlider" type="HSlider" parent="Option/PanelContainer/VBoxContainer/MusicVBoxContainer"]
+custom_minimum_size = Vector2(800, 50)
+layout_mode = 2
+min_value = -50.0
+max_value = 0.0
+value = -25.0
+
+[node name="SFXVBoxContainer" type="VBoxContainer" parent="Option/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SFXLabel" type="Label" parent="Option/PanelContainer/VBoxContainer/SFXVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "SFX"
+
+[node name="SFXHSlider" type="HSlider" parent="Option/PanelContainer/VBoxContainer/SFXVBoxContainer"]
+custom_minimum_size = Vector2(800, 50)
+layout_mode = 2
+min_value = -50.0
+max_value = 0.0
+value = -25.0
+
+[node name="ModeVBoxContainer" type="VBoxContainer" parent="Option/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ModesLabel" type="Label" parent="Option/PanelContainer/VBoxContainer/ModeVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Tryby:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Option/PanelContainer/VBoxContainer/ModeVBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="WindowedLabel" type="Label" parent="Option/PanelContainer/VBoxContainer/ModeVBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Okienkowy"
+
+[node name="WindowedCheckBox" type="CheckBox" parent="Option/PanelContainer/VBoxContainer/ModeVBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1316l")
+theme_override_icons/checked = ExtResource("7_047m5")
+theme_override_icons/unchecked = ExtResource("8_1316l")
+
+[node name="MaximizedLabel" type="Label" parent="Option/PanelContainer/VBoxContainer/ModeVBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Zmaksymalizowany"
+
+[node name="MaximizedCheckBox" type="CheckBox" parent="Option/PanelContainer/VBoxContainer/ModeVBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2nsh4")
+theme_override_icons/checked = ExtResource("7_047m5")
+theme_override_icons/unchecked = ExtResource("8_1316l")
+
+[node name="FullscreenLabel" type="Label" parent="Option/PanelContainer/VBoxContainer/ModeVBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Pełny ekran"
+
+[node name="FullscreenCheckBox" type="CheckBox" parent="Option/PanelContainer/VBoxContainer/ModeVBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_afxhl")
+theme_override_icons/checked = ExtResource("7_047m5")
+theme_override_icons/unchecked = ExtResource("8_1316l")
+
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start"]
 [connection signal="pressed" from="VBoxContainer/OptionButton" to="." method="_on_option"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit"]
+[connection signal="pressed" from="Option/PanelContainer/VBoxContainer/XTextureButton" to="Option" method="_on_x"]
+[connection signal="value_changed" from="Option/PanelContainer/VBoxContainer/MusicVBoxContainer/MusicHSlider" to="Option" method="_on_music"]
+[connection signal="value_changed" from="Option/PanelContainer/VBoxContainer/SFXVBoxContainer/SFXHSlider" to="Option" method="_on_sfxh_slider_value_changed"]
+[connection signal="pressed" from="Option/PanelContainer/VBoxContainer/ModeVBoxContainer/HBoxContainer/WindowedCheckBox" to="Option" method="_on_windowed"]
+[connection signal="pressed" from="Option/PanelContainer/VBoxContainer/ModeVBoxContainer/HBoxContainer/MaximizedCheckBox" to="Option" method="_on_maximized"]
+[connection signal="pressed" from="Option/PanelContainer/VBoxContainer/ModeVBoxContainer/HBoxContainer/FullscreenCheckBox" to="Option" method="_on_fullscreen"]
