@@ -36,5 +36,7 @@ enemy="hostile entity"
 [layer_names]
 
 2d_physics/layer_1="environment"
-2d_physics/layer_2="other_entities"
-2d_physics/layer_3="same_entities"
+2d_physics/layer_2="enemy"
+2d_physics/layer_3="frien"
+2d_physics/layer_4="other_entities"
+2d_physics/layer_5="same_entities"

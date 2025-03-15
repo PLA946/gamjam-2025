@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=4 uid="uid://b37gi2wg7rl5c"]
 
 [ext_resource type="PackedScene" uid="uid://dt8702yupi7j6" path="res://scenes/manager/wave_manager/wave_manager.tscn" id="1_fmjld"]
-[ext_resource type="Script" path="res://scenes/map/level.gd" id="1_ii35b"]
+[ext_resource type="Script" uid="uid://cjp6rdx62nnw2" path="res://scenes/map/level.gd" id="1_ii35b"]
 [ext_resource type="Resource" uid="uid://cvvq1rl4go0km" path="res://scenes/manager/wave_manager/waves/level_1_waves.tres" id="2_gdio5"]
 [ext_resource type="Texture2D" uid="uid://dujkrmtx2e8ep" path="res://assets/tilesets/towerDefense_tilesheet.png" id="5_xbykm"]
 
@@ -481,10 +481,6 @@ tile_set = SubResource("TileSet_w272c")
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_qvs5h")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(-77, 848)
-rotates = false
 
 [node name="Overlay" type="Control" parent="."]
 layout_mode = 3

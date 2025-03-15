@@ -6,5 +6,13 @@
 script = ExtResource("1_pjif1")
 waves = Array[Dictionary]([{
 0: 2
-}, {}, {}, {}, {}])
+}, {
+0: 3
+}, {
+0: 4
+}, {
+0: 5
+}, {
+0: 6
+}])
 metadata/_custom_type_script = "uid://bjs4wc6q8shks"
