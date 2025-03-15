@@ -1,8 +1,7 @@
 extends Node
 
-#@onready var bg_music = $MenuAudioStreamPlayer
+@onready var bg_music = $MenuAudioStreamPlayer
 @onready var bg_sfx = $SFXAudioStreamPlayer
-@onready var bg_music = $SFXAudioStreamPlayer
 
 func _ready() -> void:
 	bg_music.volume_db = -25

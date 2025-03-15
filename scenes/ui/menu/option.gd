@@ -13,7 +13,7 @@ func _ready() -> void:
 		ch2.set_pressed(true)
 	elif current_mode == 3:
 		ch3.set_pressed(true)
-	print(current_mode)
+
 
 func _on_x() -> void:
 	$"../Option".visible = false
@@ -23,7 +23,7 @@ func _on_music(value: float) -> void:
 	AudioControler.set_music_volume(value)
 
 
-func _on_sfxh_slider_value_changed(value: float) -> void:
+func _on_sfx(value: float) -> void:
 	AudioControler.set_sfx_volume(value)
 
 

@@ -1,3 +1,36 @@
-[gd_scene format=3 uid="uid://dyttrsc07jxh6"]
+[gd_scene load_steps=5 format=3 uid="uid://doswmkfbyotfs"]
+
+[ext_resource type="Texture2D" uid="uid://dttk421mtylh0" path="res://assets/textures/lviv3.jpg" id="1_hyk8p"]
+[ext_resource type="Texture2D" uid="uid://c843ue4ccn85l" path="res://assets/textures/icons/unchecked.png" id="2_k2fmo"]
+[ext_resource type="Script" uid="uid://ctmf74yf581r7" path="res://scenes/main/level_position.gd" id="2_l3cfh"]
+[ext_resource type="Texture2D" uid="uid://d0v6m88hxcg8l" path="res://assets/textures/icons/checked.png" id="3_l3cfh"]
 
 [node name="main" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_hyk8p")
+
+[node name="LevelPosition" type="Control" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_l3cfh")
+
+[node name="TextureButton" type="TextureButton" parent="LevelPosition"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+offset_left = 286.0
+offset_top = 267.0
+offset_right = 336.0
+offset_bottom = 317.0
+texture_normal = ExtResource("2_k2fmo")
+texture_hover = ExtResource("3_l3cfh")
+
+[connection signal="pressed" from="LevelPosition/TextureButton" to="LevelPosition" method="_on_level_1"]
