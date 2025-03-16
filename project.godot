@@ -10,10 +10,12 @@ config_version=5
 
 [application]
 
-config/name="GamJam"
+config/name="ObronaLwowaTD"
 run/main_scene="uid://bg2k7cwdy2y1w"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/image="uid://bm8bvje3782d7"
+config/icon="uid://fmp1ud1buna3"
+boot_splash/minimum_display_time=2000
 
 [autoload]
 

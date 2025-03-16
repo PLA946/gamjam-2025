@@ -22,7 +22,7 @@
 		"lv": 3.0,
 		"money": 50.0,
 		"name": "Wietrzna polana",
-		"stars": 0.0,
+		"stars": 3.0,
 		"unlocked": true,
 		"waves_count": 9.0
 	},
@@ -31,8 +31,8 @@
 		"lv": 4.0,
 		"money": 50.0,
 		"name": "Oblężenie Lwowa",
-		"stars": 0.0,
-		"unlocked": false,
+		"stars": 3.0,
+		"unlocked": true,
 		"waves_count": 11.0
 	},
 	"Level_5": {
@@ -41,7 +41,7 @@
 		"money": 50.0,
 		"name": "Bitwa o most",
 		"stars": 0.0,
-		"unlocked": false,
+		"unlocked": true,
 		"waves_count": 13.0
 	},
 	"Level_6": {

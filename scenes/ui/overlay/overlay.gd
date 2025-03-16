@@ -11,7 +11,7 @@ var levels = Data.save_data
 
 func _on_resume() -> void:
 	pause.visible = false
-	GameData.level_completed(hp)
+	on_victory()
 
 func _on_quit() -> void:
 	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
@@ -31,3 +31,9 @@ func _on_back_menu() -> void:
 
 func _on_reset() -> void:
 	get_tree().reload_current_scene()
+
+func on_lose():
+	$Lose.visible = true
+
+func on_victory():
+	GameData.level_completed(hp)

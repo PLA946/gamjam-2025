@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bh6hmpcgh3r8m"]
 
 [ext_resource type="Script" uid="uid://cg7yeg21qlmli" path="res://scenes/ui/overlay/overlay.gd" id="1_7htkq"]
-[ext_resource type="Texture2D" uid="uid://bg2gxdm2t7hma" path="res://assets/textures/icons/money.png" id="1_n0kq8"]
+[ext_resource type="Texture2D" uid="uid://cb5rrdqiepi37" path="res://assets/textures/icons/star.png" id="2_7htkq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7htkq"]
 content_margin_left = 10.0
@@ -51,12 +51,12 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-texture = ExtResource("1_n0kq8")
+texture = ExtResource("2_7htkq")
 
 [node name="Label" type="Label" parent="Stars/PanelContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_font_sizes/font_size = 25
-text = "Zebrane gwiazdki: 0/18"
+text = "Zdobyte gwiazdki: 0/18"
 
 [connection signal="pressed" from="Button" to="." method="_on_back_menu"]

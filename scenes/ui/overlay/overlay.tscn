@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dmemlmk5jkfuo" path="res://assets/textures/icons/heart.png" id="2_5qngs"]
 [ext_resource type="Texture2D" uid="uid://bg2gxdm2t7hma" path="res://assets/textures/icons/money.png" id="3_ugq8m"]
 [ext_resource type="Texture2D" uid="uid://chyej82623xsb" path="res://assets/textures/icons/skull.png" id="4_81t38"]
-[ext_resource type="Texture2D" uid="uid://b350cwpbsw04t" path="res://assets/textures/icons/pause.png" id="5_ugq8m"]
 [ext_resource type="Texture2D" uid="uid://4eyhelp4nm3h" path="res://assets/textures/icons/pause_hovered.png" id="6_81t38"]
+[ext_resource type="Texture2D" uid="uid://bd0pc4jfy6prr" path="res://assets/textures/icons/pause_normal.png" id="7_81t38"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ugq8m"]
 content_margin_left = 40.0
@@ -115,8 +115,8 @@ offset_left = 1840.0
 offset_right = 1880.0
 offset_bottom = 40.0
 grow_horizontal = 0
-texture_normal = ExtResource("5_ugq8m")
-texture_hover = ExtResource("6_81t38")
+texture_normal = ExtResource("6_81t38")
+texture_hover = ExtResource("7_81t38")
 stretch_mode = 5
 
 [node name="Pause" type="Control" parent="."]
