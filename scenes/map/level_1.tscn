@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://b37gi2wg7rl5c"]
+[gd_scene load_steps=11 format=4 uid="uid://b37gi2wg7rl5c"]
 
 [ext_resource type="PackedScene" uid="uid://dt8702yupi7j6" path="res://scenes/manager/wave_manager/wave_manager.tscn" id="1_fmjld"]
 [ext_resource type="Script" uid="uid://cjp6rdx62nnw2" path="res://scenes/map/level.gd" id="1_ii35b"]
