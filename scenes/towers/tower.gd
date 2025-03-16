@@ -6,3 +6,4 @@ class_name Tower
 @export var time_to_attack: float = 5
 @export var projectile: PackedScene
 @export var projectile_speed: float = 80
+@export var cost: int

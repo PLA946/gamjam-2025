@@ -6,6 +6,7 @@ class_name Entity
 @export var damage: int
 @export var speed: int = 20
 @export var time_to_attack: int = 1
+@export var gold_drop: int
 
 func _ready() -> void:
 	#GameEvents.attack.connect(receive_damage)

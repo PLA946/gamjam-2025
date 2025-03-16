@@ -5,6 +5,7 @@ signal enemy_through(damage_amount: int)
 signal enemy_down()
 signal game_lost()
 signal change_level_hover()
+signal level_victory()
 
 func emit_attack_signal(damage_amount: int):
 	attack.emit(damage_amount)
@@ -20,3 +21,6 @@ func emit_enemy_down():
 
 func emit_change_level_hover():
 	change_level_hover.emit()
+
+func emit_level_victory():
+	level_victory.emit()

@@ -1,25 +1,27 @@
 [gd_scene load_steps=6 format=3 uid="uid://htgmisgm5n3c"]
 
-[ext_resource type="Script" uid="uid://b5kfjxdi1qegx" path="res://scenes/towers/tower_1/tower_1.gd" id="1_h5fw4"]
-[ext_resource type="PackedScene" uid="uid://cdpf43gwdu62k" path="res://scenes/towers/tower_1/arrow.tscn" id="2_78vqf"]
+[ext_resource type="Script" path="res://scenes/towers/tower_2/tower_2.gd" id="1_i1sfp"]
+[ext_resource type="PackedScene" uid="uid://dp6i3kju42fvk" path="res://scenes/towers/tower_2/arrow.tscn" id="2_memif"]
 [ext_resource type="PackedScene" uid="uid://bhf1w4dclug5p" path="res://scenes/abilities/attack_ability/tower_attack_ability.tscn" id="3_ybehb"]
-[ext_resource type="Texture2D" uid="uid://ck2bd707sqdu8" path="res://icon.svg" id="4_ykye3"]
+[ext_resource type="Texture2D" uid="uid://h85yng6bom3f" path="res://assets/textures/towers/tower_3.png" id="4_memif"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onc5l"]
 radius = 299.06
 
 [node name="Tower_2" type="Node2D" groups=["rotatable", "tower"]]
-script = ExtResource("1_h5fw4")
-tower_name = "Wieża łucznicza"
-damage = 1
-time_to_attack = 0.75
-projectile = ExtResource("2_78vqf")
-projectile_speed = 300.0
+script = ExtResource("1_i1sfp")
+tower_name = "Wieża balistyczna"
+damage = 3
+time_to_attack = 1.5
+projectile = ExtResource("2_memif")
+projectile_speed = 350.0
+cost = 40
 
 [node name="TowerAttackAbility" parent="." instance=ExtResource("3_ybehb")]
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("4_ykye3")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_memif")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 32

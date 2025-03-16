@@ -504,21 +504,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="WaveStart" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TextureButton" type="TextureButton" parent="WaveStart"]
-layout_mode = 0
-offset_left = 17.0
-offset_top = 810.0
-offset_right = 67.0
-offset_bottom = 860.0
-texture_normal = ExtResource("5_gbkmt")
-texture_hover = ExtResource("6_j3gfk")
-
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -555,5 +540,20 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 texture = ExtResource("8_j3gfk")
 expand_mode = 1
+
+[node name="WaveStart" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureButton" type="TextureButton" parent="WaveStart"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 810.0
+offset_right = 67.0
+offset_bottom = 860.0
+texture_normal = ExtResource("5_gbkmt")
+texture_hover = ExtResource("6_j3gfk")
 
 [connection signal="pressed" from="WaveStart/TextureButton" to="." method="_on_wave_start"]

@@ -1,19 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://jh6xrneyd5we"]
+[gd_scene load_steps=4 format=3 uid="uid://pubbonh52jhi"]
 
-[ext_resource type="Script" uid="uid://c8df63lo83irb" path="res://scenes/towers/projectile.gd" id="1_tfp3e"]
-[ext_resource type="Texture2D" uid="uid://ys2b1w2xrqnm" path="res://scenes/towers/tower_3/rock.png" id="2_tfp3e"]
+[ext_resource type="Script" uid="uid://c8df63lo83irb" path="res://scenes/towers/projectile.gd" id="1_8cvqo"]
+[ext_resource type="Texture2D" uid="uid://3tyxp866tlek" path="res://scenes/towers/tower_4/rock.png" id="2_8cvqo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hsdma"]
 size = Vector2(12, 12)
 
 [node name="Arrow" type="CharacterBody2D"]
-script = ExtResource("1_tfp3e")
+script = ExtResource("1_8cvqo")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(-2, 0)
 rotation = 0.767945
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_tfp3e")
+texture = ExtResource("2_8cvqo")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 64

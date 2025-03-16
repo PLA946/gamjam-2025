@@ -11,8 +11,8 @@ radius = 50.0
 [node name="Enemy_1" type="Node2D" groups=["enemy"]]
 script = ExtResource("1_tbv1g")
 entity_name = "Pchełka"
-hp = 4
-damage = 2
+hp = 7
+damage = 1
 speed = 40
 
 [node name="AttackAbility" parent="." instance=ExtResource("2_nm5dn")]

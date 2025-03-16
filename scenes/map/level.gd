@@ -23,3 +23,5 @@ func enemy_down():
 	if len(get_tree().get_nodes_in_group("enemy")) == 0:
 		wave_started = false
 		$WaveStart.visible = true
+		if current_wave == Data.save_data[current_level]["waves_count"]:
+			GameEvents.emit_level_victory()
