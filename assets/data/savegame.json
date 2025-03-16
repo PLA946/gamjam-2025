@@ -1,0 +1,56 @@
+{
+	"Level_1": {
+		"boss": false,
+		"lv": 1.0,
+		"money": 50.0,
+		"name": "Pierwsze kroki",
+		"stars": 3.0,
+		"unlocked": true,
+		"waves_count": 5.0
+	},
+	"Level_2": {
+		"boss": false,
+		"lv": 2.0,
+		"money": 50.0,
+		"name": "Strażnica Tatarów",
+		"stars": 3.0,
+		"unlocked": true,
+		"waves_count": 7.0
+	},
+	"Level_3": {
+		"boss": false,
+		"lv": 3.0,
+		"money": 50.0,
+		"name": "Wietrzna polana",
+		"stars": 0.0,
+		"unlocked": false,
+		"waves_count": 9.0
+	},
+	"Level_4": {
+		"boss": false,
+		"lv": 4.0,
+		"money": 50.0,
+		"name": "Oblężenie Lwowa",
+		"stars": 0.0,
+		"unlocked": false,
+		"waves_count": 11.0
+	},
+	"Level_5": {
+		"boss": false,
+		"lv": 5.0,
+		"money": 50.0,
+		"name": "Bitwa o most",
+		"stars": 0.0,
+		"unlocked": false,
+		"waves_count": 13.0
+	},
+	"Level_6": {
+		"boss": true,
+		"lv": 6.0,
+		"money": 50.0,
+		"name": "Osmański Bastion",
+		"stars": 0.0,
+		"unlocked": false,
+		"waves_count": 15.0
+	}
+}

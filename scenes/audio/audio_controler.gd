@@ -3,13 +3,11 @@ extends Node
 @onready var bg_music: AudioStreamPlayer = $MenuAudioStreamPlayer
 @onready var bg_sfx: AudioStreamPlayer = $SFXAudioStreamPlayer
 
-
 var playlist: Array[AudioStream] = [
 	preload("res://assets/audio/galway.mp3"),
 	preload("res://assets/audio/celtic_impulse.mp3"),
 	preload("res://assets/audio/defending_the_village.mp3")
 ]
-
 var current_track_index: int = 0
 
 func _ready() -> void:
