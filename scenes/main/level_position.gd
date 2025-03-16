@@ -9,6 +9,14 @@ extends Control
 	"Level_5": $Level_5, 
 	"Level_6": $Level_6
 }
+@onready var level_paths = {
+	"Level_1": $Background/BgMap/BaseBackground/Path/Path1, 
+	"Level_2": $Background/BgMap/BaseBackground/Path/Path2, 
+	"Level_3": $Background/BgMap/BaseBackground/Path/Path3, 
+	"Level_4": $Background/BgMap/BaseBackground/Path/Path4, 
+	"Level_5": $Background/BgMap/BaseBackground/Path/Path5, 
+	"Level_6": $Background/BgMap/BaseBackground/Path/Path6,
+}
 
 var levels = Data.save_data
 
@@ -22,12 +30,36 @@ func _ready():
 	var scene = load("res://scenes/main/bg_map.tscn")
 	var instance = scene.instantiate()
 	$"../Background".add_child(instance)
-	Data.load_game()  # Wczytaj dane
+
+	await get_tree().process_frame
+	Data.load_game()
+	_find_paths()  # Pobierz ścieżki po załadowaniu
 	_update_level_visibility()
+
+func _find_paths():
+	# Pobierz nowo załadowane ścieżki z dodanej sceny
+	var bg_map = $"../Background/BgMap"
+	if bg_map:
+		var path_parent = bg_map.get_node("BaseBackground/Path")
+		if path_parent:
+			level_paths = {
+				"Level_1": path_parent.get_node_or_null("Path1"),
+				"Level_2": path_parent.get_node_or_null("Path2"),
+				"Level_3": path_parent.get_node_or_null("Path3"),
+				"Level_4": path_parent.get_node_or_null("Path4"),
+				"Level_5": path_parent.get_node_or_null("Path5"),
+				"Level_6": path_parent.get_node_or_null("Path6"),
+			}
+
 
 func _update_level_visibility():
 	for level in level_buttons.keys():
-		level_buttons[level].visible = Data.save_data[level]["unlocked"]
+		if level_buttons[level] and level_paths[level]:  # Sprawdzamy, czy obiekty istnieją
+			level_buttons[level].visible = Data.save_data[level]["unlocked"]
+			level_paths[level].visible = Data.save_data[level]["unlocked"]
+		else:
+			print("Błąd: Nie znaleziono przycisku lub ścieżki dla", level)
+
 
 func _update_tooltip(level_name: String):
 	if levels.has(level_name):

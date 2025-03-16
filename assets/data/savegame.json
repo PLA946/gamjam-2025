@@ -23,7 +23,7 @@
 		"money": 50.0,
 		"name": "Wietrzna polana",
 		"stars": 0.0,
-		"unlocked": false,
+		"unlocked": true,
 		"waves_count": 9.0
 	},
 	"Level_4": {

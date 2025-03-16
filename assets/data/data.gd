@@ -19,7 +19,7 @@ func _ready():
 func save_game():
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if file:
-		file.store_string(JSON.stringify(save_data, "\t"))  # Pretty print
+		file.store_string(JSON.stringify(save_data, "\t"))
 		file.close()
 
 func load_game():
@@ -31,7 +31,7 @@ func load_game():
 			if json != null:
 				save_data = json
 			else:
-				save_data = Base_Levels.duplicate(true)  # Kopiuje domyślne wartości
+				save_data = Base_Levels.duplicate(true)
 		else:
 			save_data = Base_Levels.duplicate(true)
 	else:
@@ -40,37 +40,29 @@ func load_game():
 
 
 func update_level(level_name: String, stars: int, unlocked: bool):
-	if Data.save_data.has(level_name):  # Sprawdzamy, czy poziom istnieje w danych
+	if Data.save_data.has(level_name):
 		var level_data = Data.save_data[level_name]
-		level_data["stars"] = stars  # Zapisujemy liczbę gwiazdek
-		level_data["unlocked"] = unlocked  # Zmieniamy status odblokowania
-		Data.save_game()  # Zapisz dane gry do pliku
-		print("Poziom %s został zaktualizowany! Gwiazdki: %d, Odblokowany: %s" % [level_name, stars, unlocked])
+		level_data["stars"] = stars
+		level_data["unlocked"] = unlocked
+		Data.save_game()
 
-
-func unlock_next_level():
-	# Pobierz klucze poziomów
+func unlock_next_level(current_level):
 	var levels = save_data.keys()
 
-	# Zidentyfikuj aktualny poziom
-	var current_level = null
-	for level in levels:
-		if save_data[level]["unlocked"]:
-			current_level = level
-			break  # Znaleziono pierwszy odblokowany poziom
-
-	if current_level == null:
-		print("Brak odblokowanego poziomu.")
-		return
-
-	# Wyszukaj kolejny poziom
+	# Wyszukaj numer aktualnego poziomu
 	var current_level_number = int(current_level.split("_")[1])
-	var next_level = "Level_" + str(current_level_number + 1)
 
-	# Sprawdź, czy istnieje następny poziom i czy nie jest już odblokowany
-	if save_data.has(next_level) and !save_data[next_level]["unlocked"]:
-		save_data[next_level]["unlocked"] = true
-		save_game()  # Zapisz dane
-		print("Odblokowano poziom:", next_level)
+	# Sprawdź, czy istnieje następny poziom
+	print(current_level_number)
+	var next_level = "Level_" + str(current_level_number + 1)
+	print(next_level)
+
+	if save_data.has(next_level):
+		if !save_data[next_level]["unlocked"]:
+			save_data[next_level]["unlocked"] = true
+			save_game()  # Zapisz dane
+			print("Odblokowano poziom:", next_level)
+		else:
+			print("Poziom", next_level, "jest już odblokowany.")
 	else:
-		print("Brak następnego poziomu lub już jest odblokowany.")
+		print("Brak następnego poziomu.")

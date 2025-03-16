@@ -14,7 +14,6 @@ func _ready() -> void:
 
 func _on_resume() -> void:
 	pause.visible = false
-	Data.unlock_next_level()
 	GameData.level_completed(hp)
 	
 
