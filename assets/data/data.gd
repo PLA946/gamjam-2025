@@ -1,6 +1,6 @@
 extends Node
 
-const SAVE_PATH = "res://assets/data/savegame.json"
+const SAVE_PATH = "user://savegame.json"
 
 var save_data = {}
 
@@ -45,8 +45,6 @@ func restart_game():
 		file.close()
 	save_data = Base_Levels.duplicate(true)
 	save_game()
-
-	print("Gra została zresetowana.")
 
 	
 
