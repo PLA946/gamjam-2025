@@ -1,5 +1,17 @@
 [gd_scene load_steps=6 format=3 uid="uid://cqfnhpgcnjjvj"]
 
+<<<<<<< HEAD
+[ext_resource type="Script" uid="uid://b5kfjxdi1qegx" path="res://scenes/towers/tower_1/tower_1.gd" id="1_jedii"]
+[ext_resource type="PackedScene" uid="uid://cdpf43gwdu62k" path="res://scenes/towers/tower_1/arrow.tscn" id="2_u0t6k"]
+[ext_resource type="PackedScene" path="res://scenes/abilities/attack_ability/tower_attack_ability.tscn" id="3_nuk8a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0sbit"]
+bg_color = Color(0.6, 0.6, 0.6, 0.556863)
+corner_radius_top_left = 5000
+corner_radius_top_right = 5000
+corner_radius_bottom_right = 5000
+corner_radius_bottom_left = 5000
+=======
 [ext_resource type="PackedScene" uid="uid://jh6xrneyd5we" path="res://scenes/towers/tower_3/rock.tscn" id="1_mc7pm"]
 [ext_resource type="Texture2D" uid="uid://d3dp106nyyx0m" path="res://assets/textures/towers/tower_2.png" id="3_mc7pm"]
 [ext_resource type="PackedScene" uid="uid://bhf1w4dclug5p" path="res://scenes/abilities/attack_ability/tower_attack_ability.tscn" id="3_nuk8a"]
@@ -10,6 +22,7 @@ script/source = "extends Tower
 func _ready() -> void:
 	pass
 "
+>>>>>>> 19497a800198af2172747081ef87a9903964e100
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onc5l"]
 radius = 299.06
@@ -23,11 +36,21 @@ projectile = ExtResource("1_mc7pm")
 projectile_speed = 250.0
 cost = 60
 
+[node name="Area" type="PanelContainer" parent="."]
+offset_left = -301.0
+offset_top = -299.0
+offset_right = 299.0
+offset_bottom = 301.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0sbit")
+
 [node name="TowerAttackAbility" parent="." instance=ExtResource("3_nuk8a")]
 
 [node name="Sprite" type="Sprite2D" parent="."]
+<<<<<<< HEAD
+=======
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_mc7pm")
+>>>>>>> 19497a800198af2172747081ef87a9903964e100
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 32
