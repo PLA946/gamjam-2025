@@ -1,8 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://p6qtrj3icewo"]
+[gd_scene load_steps=5 format=3 uid="uid://p6qtrj3icewo"]
 
 [ext_resource type="Texture2D" uid="uid://daluwnourcumu" path="res://icon.svg" id="1_074e5"]
+[ext_resource type="Script" uid="uid://ds7a2fp4q7iq1" path="res://scenes/entities/enemies/enemy_1/enemy_1.gd" id="1_tbv1g"]
+[ext_resource type="PackedScene" uid="uid://dy12nfhdpmu0o" path="res://scenes/abilities/attack_ability/attack_ability.tscn" id="2_nm5dn"]
 
-[node name="Enemy1" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_jacwl"]
+radius = 50.0
 
-[node name="Icon" type="Sprite2D" parent="."]
+[node name="Enemy_1" type="Node2D" groups=["enemy"]]
+script = ExtResource("1_tbv1g")
+entity_name = "Pchełka"
+hp = 4
+damage = 2
+speed = 40
+
+[node name="AttackAbility" parent="." instance=ExtResource("2_nm5dn")]
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_074e5")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_jacwl")

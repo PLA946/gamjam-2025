@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt8702yupi7j6"]
+
+[ext_resource type="Script" uid="uid://c4h0u1my0332i" path="res://scenes/manager/wave_manager/wave_manager.gd" id="1_a730d"]
+
+[node name="WaveManager" type="Node"]
+script = ExtResource("1_a730d")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
