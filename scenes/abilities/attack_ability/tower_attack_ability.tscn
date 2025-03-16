@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhf1w4dclug5p"]
+
+[ext_resource type="Script" uid="uid://4hdlcvisj6vd" path="res://scenes/abilities/attack_ability/tower_attack_ability.gd" id="1_w3m3l"]
+
+[node name="TowerAttackAbility" type="Node"]
+script = ExtResource("1_w3m3l")
+
+[node name="Timer" type="Timer" parent="."]

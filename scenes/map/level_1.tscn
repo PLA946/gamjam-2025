@@ -455,7 +455,13 @@ sources/0 = SubResource("TileSetAtlasSource_qvs5h")
 
 [sub_resource type="Curve2D" id="Curve2D_qvs5h"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -77, 848, 0, 0, 0, 0, 373, 840, 0, 0, 0, 0, 375, 261, 0, 0, 0, 0, 836, 266, 0, 0, 0, 0, 843, 761, 0, 0, 0, 0, 1406, 766, 0, 0, 0, 0, 1415, 327, 0, 0, 0, 0, 2097, 328)
+"points": PackedVector2Array(0, 0, 0, 0, -30, 809, 0, 0, 0, 0, 350, 803, 0, 0, 0, 0, 353, 232, 0, 0, 0, 0, 871, 231, 0, 0, 0, 0, 873, 730, 0, 0, 0, 0, 1377, 736, 0, 0, 0, 0, 1371, 296, 0, 0, 0, 0, 2095, 296)
+}
+point_count = 8
+
+[sub_resource type="Curve2D" id="Curve2D_gdio5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -25, 878, 0, 0, 0, 0, 421, 866, 0, 0, 0, 0, 415, 301, 0, 0, 0, 0, 793, 294, 0, 0, 0, 0, 799, 790, 0, 0, 0, 0, 1444, 800, 0, 0, 0, 0, 1442, 357, 0, 0, 0, 0, 2095, 359)
 }
 point_count = 8
 
@@ -481,8 +487,11 @@ tile_set = SubResource("TileSet_w272c")
 
 [node name="Tower" type="TileMapLayer" parent="."]
 
-[node name="Path2D" type="Path2D" parent="."]
+[node name="Path2D_1" type="Path2D" parent="." groups=["path"]]
 curve = SubResource("Curve2D_qvs5h")
+
+[node name="Path2D_2" type="Path2D" parent="." groups=["path"]]
+curve = SubResource("Curve2D_gdio5")
 
 [node name="Overlay" type="Control" parent="."]
 layout_mode = 3

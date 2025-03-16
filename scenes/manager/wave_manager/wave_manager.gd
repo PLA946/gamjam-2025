@@ -4,6 +4,8 @@ var enemies = [preload("res://scenes/entities/enemies/enemy_1/enemy_1.tscn")]
 @export var waves: Waves
 var full_waves_list: Array[Array] = []
 var wave_num: int
+#@onready var paths = ["Path2D_1", ]
+var current_path = 0
 
 func _ready() -> void:
 	get_parent().wave_start.connect(wave_start)
@@ -33,9 +35,9 @@ func next_spawn():
 		path_follow.loop = false
 		path_follow.rotates = false
 		path_follow.add_child((enemies[full_waves_list[wave_num][0]] as PackedScene).instantiate())
-		get_parent().get_node("Path2D").add_child(path_follow)
-		
+		get_parent().get_tree().get_nodes_in_group("path")[current_path].add_child(path_follow)
 		full_waves_list[wave_num].pop_back()
+		current_path = int(!bool(current_path))
 		
 	if len(full_waves_list[wave_num]) == 0:
 		$Timer.one_shot = true
