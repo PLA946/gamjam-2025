@@ -2,8 +2,14 @@
 
 [ext_resource type="Script" uid="uid://b5kfjxdi1qegx" path="res://scenes/towers/tower_1/tower_1.gd" id="1_jedii"]
 [ext_resource type="PackedScene" uid="uid://cdpf43gwdu62k" path="res://scenes/towers/tower_1/arrow.tscn" id="2_u0t6k"]
-[ext_resource type="PackedScene" uid="uid://bhf1w4dclug5p" path="res://scenes/abilities/attack_ability/tower_attack_ability.tscn" id="3_nuk8a"]
-[ext_resource type="Texture2D" uid="uid://ck2bd707sqdu8" path="res://icon.svg" id="4_sy6po"]
+[ext_resource type="PackedScene" path="res://scenes/abilities/attack_ability/tower_attack_ability.tscn" id="3_nuk8a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0sbit"]
+bg_color = Color(0.6, 0.6, 0.6, 0.556863)
+corner_radius_top_left = 5000
+corner_radius_top_right = 5000
+corner_radius_bottom_right = 5000
+corner_radius_bottom_left = 5000
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onc5l"]
 radius = 299.06
@@ -16,10 +22,16 @@ time_to_attack = 0.75
 projectile = ExtResource("2_u0t6k")
 projectile_speed = 300.0
 
+[node name="Area" type="PanelContainer" parent="."]
+offset_left = -301.0
+offset_top = -299.0
+offset_right = 299.0
+offset_bottom = 301.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0sbit")
+
 [node name="TowerAttackAbility" parent="." instance=ExtResource("3_nuk8a")]
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("4_sy6po")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 32
