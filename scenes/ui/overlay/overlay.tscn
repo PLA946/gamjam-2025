@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dtymnua7uo7km"]
 
 [ext_resource type="Script" uid="uid://cg7yeg21qlmli" path="res://scenes/ui/overlay/overlay.gd" id="1_81t38"]
-[ext_resource type="StyleBox" uid="uid://db21yli1key1v" path="res://l.tres" id="1_mqy0c"]
+[ext_resource type="StyleBox" uid="uid://gdou5ofvpiko" path="res://l.tres" id="1_mqy0c"]
 [ext_resource type="Texture2D" uid="uid://dmemlmk5jkfuo" path="res://assets/textures/icons/heart.png" id="2_5qngs"]
 [ext_resource type="Texture2D" uid="uid://bg2gxdm2t7hma" path="res://assets/textures/icons/money.png" id="3_ugq8m"]
 [ext_resource type="Texture2D" uid="uid://chyej82623xsb" path="res://assets/textures/icons/skull.png" id="4_81t38"]
@@ -20,6 +20,7 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [node name="Overlay" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_81t38")
