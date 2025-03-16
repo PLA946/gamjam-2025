@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b5kfjxdi1qegx" path="res://scenes/towers/tower_1/tower_1.gd" id="1_8wimm"]
 [ext_resource type="PackedScene" uid="uid://cdpf43gwdu62k" path="res://scenes/towers/tower_1/arrow.tscn" id="2_onc5l"]
 [ext_resource type="PackedScene" uid="uid://bhf1w4dclug5p" path="res://scenes/abilities/attack_ability/tower_attack_ability.tscn" id="2_wfeuq"]
-[ext_resource type="Texture2D" uid="uid://daluwnourcumu" path="res://icon.svg" id="3_ccvjr"]
+[ext_resource type="Texture2D" uid="uid://ck2bd707sqdu8" path="res://icon.svg" id="3_ccvjr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onc5l"]
 radius = 299.06

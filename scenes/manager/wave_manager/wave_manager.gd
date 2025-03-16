@@ -29,7 +29,6 @@ func wave_start(num: int):
 	
 
 func next_spawn():
-	print("spawning...")
 	if len(full_waves_list[wave_num]) > 0:
 		var path_follow: PathFollow2D = PathFollow2D.new()
 		path_follow.loop = false
@@ -38,7 +37,7 @@ func next_spawn():
 		get_parent().get_tree().get_nodes_in_group("path")[current_path].add_child(path_follow)
 		full_waves_list[wave_num].pop_back()
 		current_path = int(!bool(current_path))
-		
+
 	if len(full_waves_list[wave_num]) == 0:
 		$Timer.one_shot = true
 		$Timer.stop()

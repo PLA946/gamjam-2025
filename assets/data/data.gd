@@ -1,6 +1,6 @@
 extends Node
 
-const SAVE_PATH = "res://assets/data/savegame.json"
+const SAVE_PATH = "user://savegame.save"
 
 var save_data = {}
 

@@ -11,7 +11,7 @@ func _ready() -> void:
 	#GameEvents.attack.connect(receive_damage)
 	$HealthBar/ProgressBar.max_value = hp
 	$HealthBar/ProgressBar.value = hp
-	pass
+	tree_exited.connect(died)
 
 
 func receive_damage(damage_amount: int):
@@ -19,4 +19,9 @@ func receive_damage(damage_amount: int):
 	$HealthBar/ProgressBar.value = hp
 	if hp == 0:
 		queue_free()
-		
+
+
+func died():
+	if is_in_group("enemy"):
+		print('enemy downing')
+		GameEvents.emit_enemy_down()
