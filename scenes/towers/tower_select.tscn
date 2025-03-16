@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7wtdlh5l7kgb"]
+[gd_scene load_steps=7 format=3 uid="uid://dmd0o3ay30stk"]
 
 [ext_resource type="Script" uid="uid://0n7vljcwtxtq" path="res://scenes/towers/tower_select.gd" id="1_b20gc"]
-[ext_resource type="Texture2D" uid="uid://ck2bd707sqdu8" path="res://icon.svg" id="1_w16my"]
+[ext_resource type="Texture2D" uid="uid://bcntowfe3mmgk" path="res://assets/textures/towers/tower_1.png" id="2_sa3m4"]
+[ext_resource type="Texture2D" uid="uid://h85yng6bom3f" path="res://assets/textures/towers/tower_3.png" id="3_r18j3"]
+[ext_resource type="Texture2D" uid="uid://d3dp106nyyx0m" path="res://assets/textures/towers/tower_2.png" id="4_8dgud"]
+[ext_resource type="Texture2D" uid="uid://7w5acqq63vnj" path="res://assets/textures/towers/tower_4.png" id="5_emi04"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b20gc"]
 bg_color = Color(0.6, 0.6, 0.6, 0.556863)
@@ -15,9 +18,12 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1057.0
+mouse_filter = 1
 script = ExtResource("1_b20gc")
 
 [node name="Area" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 0
 offset_left = -301.0
 offset_top = -299.0
 offset_right = 299.0
@@ -40,45 +46,81 @@ grow_vertical = 0
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
 layout_mode = 2
 
-[node name="Tower1" type="TextureRect" parent="HBoxContainer/PanelContainer"]
+[node name="HBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Tower1" type="TextureRect" parent="HBoxContainer/PanelContainer/HBoxContainer"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
-texture = ExtResource("1_w16my")
+texture = ExtResource("2_sa3m4")
 expand_mode = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Łucznicy 20G"
+horizontal_alignment = 1
 
 [node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer"]
 layout_mode = 2
 
-[node name="Tower2" type="TextureRect" parent="HBoxContainer/PanelContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer2"]
+layout_mode = 2
+
+[node name="Tower2" type="TextureRect" parent="HBoxContainer/PanelContainer2/VBoxContainer"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
-texture = ExtResource("1_w16my")
+texture = ExtResource("3_r18j3")
 expand_mode = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Balista 40G"
+horizontal_alignment = 1
 
 [node name="PanelContainer3" type="PanelContainer" parent="HBoxContainer"]
 layout_mode = 2
 
-[node name="Tower3" type="TextureRect" parent="HBoxContainer/PanelContainer3"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer3"]
+layout_mode = 2
+
+[node name="Tower3" type="TextureRect" parent="HBoxContainer/PanelContainer3/VBoxContainer"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
-texture = ExtResource("1_w16my")
+texture = ExtResource("4_8dgud")
 expand_mode = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/PanelContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Trebusz 60G"
+horizontal_alignment = 1
 
 [node name="PanelContainer4" type="PanelContainer" parent="HBoxContainer"]
 layout_mode = 2
 
-[node name="Tower4" type="TextureRect" parent="HBoxContainer/PanelContainer4"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer4"]
+layout_mode = 2
+
+[node name="Tower4" type="TextureRect" parent="HBoxContainer/PanelContainer4/VBoxContainer"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
-texture = ExtResource("1_w16my")
+texture = ExtResource("5_emi04")
 expand_mode = 1
 
-[node name="Towers" type="Control" parent="."]
+[node name="Label" type="Label" parent="HBoxContainer/PanelContainer4/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Katapulta 90G"
+horizontal_alignment = 1
+
+[node name="Towers" type="Control" parent="." groups=["towers"]]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[connection signal="gui_input" from="HBoxContainer/PanelContainer/Tower1" to="." method="_on_gui_input_1"]
-[connection signal="gui_input" from="HBoxContainer/PanelContainer2/Tower2" to="." method="_on_gui_input_2"]
-[connection signal="gui_input" from="HBoxContainer/PanelContainer3/Tower3" to="." method="_on_gui_input_3"]
-[connection signal="gui_input" from="HBoxContainer/PanelContainer4/Tower4" to="." method="_on_gui_input_4"]
+[connection signal="gui_input" from="HBoxContainer/PanelContainer/HBoxContainer/Tower1" to="." method="_on_gui_input_1"]
+[connection signal="gui_input" from="HBoxContainer/PanelContainer2/VBoxContainer/Tower2" to="." method="_on_gui_input_2"]
+[connection signal="gui_input" from="HBoxContainer/PanelContainer3/VBoxContainer/Tower3" to="." method="_on_gui_input_3"]
+[connection signal="gui_input" from="HBoxContainer/PanelContainer4/VBoxContainer/Tower4" to="." method="_on_gui_input_4"]

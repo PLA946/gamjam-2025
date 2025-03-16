@@ -14,6 +14,7 @@ entity_name = "Bandzior"
 hp = 16
 damage = 2
 speed = 70
+gold_drop = 15
 
 [node name="AttackAbility" parent="." instance=ExtResource("2_gfgo2")]
 

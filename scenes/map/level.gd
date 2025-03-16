@@ -12,6 +12,7 @@ func _ready() -> void:
 	overlay.update_data(current_level)
 	GameData.set_current_level(get_name())
 	GameEvents.enemy_down.connect(enemy_down)
+	$WaveStart/TextureButton.pressed.connect(_on_wave_start)
 
 func _on_wave_start() -> void:
 	$WaveStart.visible = false

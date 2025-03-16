@@ -14,6 +14,8 @@ entity_name = "Pchełka"
 hp = 10
 damage = 1
 speed = 40
+time_to_attack = null
+gold_drop = 5
 
 [node name="AttackAbility" parent="." instance=ExtResource("2_nm5dn")]
 

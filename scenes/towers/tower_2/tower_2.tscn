@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://htgmisgm5n3c"]
+[gd_scene load_steps=7 format=3 uid="uid://htgmisgm5n3c"]
 
-<<<<<<< HEAD
-[ext_resource type="Script" uid="uid://b5kfjxdi1qegx" path="res://scenes/towers/tower_1/tower_1.gd" id="1_h5fw4"]
-[ext_resource type="PackedScene" uid="uid://cdpf43gwdu62k" path="res://scenes/towers/tower_1/arrow.tscn" id="2_78vqf"]
-[ext_resource type="PackedScene" path="res://scenes/abilities/attack_ability/tower_attack_ability.tscn" id="3_ybehb"]
+[ext_resource type="Script" path="res://scenes/towers/tower_2/tower_2.gd" id="1_i1sfp"]
+[ext_resource type="PackedScene" uid="uid://dp6i3kju42fvk" path="res://scenes/towers/tower_2/arrow.tscn" id="2_memif"]
+[ext_resource type="PackedScene" uid="uid://bhf1w4dclug5p" path="res://scenes/abilities/attack_ability/tower_attack_ability.tscn" id="3_ybehb"]
+[ext_resource type="Texture2D" uid="uid://h85yng6bom3f" path="res://assets/textures/towers/tower_3.png" id="4_memif"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_memif"]
 bg_color = Color(0.6, 0.6, 0.6, 0.556863)
@@ -11,12 +11,6 @@ corner_radius_top_left = 5000
 corner_radius_top_right = 5000
 corner_radius_bottom_right = 5000
 corner_radius_bottom_left = 5000
-=======
-[ext_resource type="Script" path="res://scenes/towers/tower_2/tower_2.gd" id="1_i1sfp"]
-[ext_resource type="PackedScene" uid="uid://dp6i3kju42fvk" path="res://scenes/towers/tower_2/arrow.tscn" id="2_memif"]
-[ext_resource type="PackedScene" uid="uid://bhf1w4dclug5p" path="res://scenes/abilities/attack_ability/tower_attack_ability.tscn" id="3_ybehb"]
-[ext_resource type="Texture2D" uid="uid://h85yng6bom3f" path="res://assets/textures/towers/tower_3.png" id="4_memif"]
->>>>>>> 19497a800198af2172747081ef87a9903964e100
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onc5l"]
 radius = 299.06
@@ -35,16 +29,14 @@ offset_left = -301.0
 offset_top = -299.0
 offset_right = 299.0
 offset_bottom = 301.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_memif")
 
 [node name="TowerAttackAbility" parent="." instance=ExtResource("3_ybehb")]
 
 [node name="Sprite" type="Sprite2D" parent="."]
-<<<<<<< HEAD
-=======
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_memif")
->>>>>>> 19497a800198af2172747081ef87a9903964e100
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 32

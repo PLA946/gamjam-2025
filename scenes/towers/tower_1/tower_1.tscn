@@ -2,13 +2,8 @@
 
 [ext_resource type="Script" path="res://scenes/towers/tower_1/tower_1.gd" id="1_8wimm"]
 [ext_resource type="PackedScene" uid="uid://cdpf43gwdu62k" path="res://scenes/towers/tower_1/arrow.tscn" id="2_onc5l"]
-<<<<<<< HEAD
-[ext_resource type="PackedScene" path="res://scenes/abilities/attack_ability/tower_attack_ability.tscn" id="2_wfeuq"]
-[ext_resource type="Texture2D" uid="uid://ck2bd707sqdu8" path="res://icon.svg" id="3_ccvjr"]
-=======
 [ext_resource type="PackedScene" uid="uid://bhf1w4dclug5p" path="res://scenes/abilities/attack_ability/tower_attack_ability.tscn" id="2_wfeuq"]
 [ext_resource type="Texture2D" uid="uid://bcntowfe3mmgk" path="res://assets/textures/towers/tower_1.png" id="4_onc5l"]
->>>>>>> 19497a800198af2172747081ef87a9903964e100
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onc5l"]
 bg_color = Color(0.6, 0.6, 0.6, 0.556863)
@@ -30,10 +25,11 @@ projectile_speed = 300.0
 cost = 20
 
 [node name="Area" type="PanelContainer" parent="."]
-offset_left = -301.0
-offset_top = -299.0
-offset_right = 299.0
-offset_bottom = 301.0
+offset_left = -214.0
+offset_top = -212.0
+offset_right = 212.0
+offset_bottom = 214.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_onc5l")
 
 [node name="TowerAttackAbility" parent="." instance=ExtResource("2_wfeuq")]

@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="Waves" load_steps=2 format=3 uid="uid://bbny0n3y4430"]
+[gd_resource type="Resource" script_class="Waves" load_steps=2 format=3 uid="uid://bmmb3fuemhgig"]
 
-[ext_resource type="Script" uid="uid://bjs4wc6q8shks" path="res://scenes/manager/wave_manager/waves/waves.gd" id="1_pjif1"]
+[ext_resource type="Script" uid="uid://bjs4wc6q8shks" path="res://scenes/manager/wave_manager/waves/waves.gd" id="1_28f45"]
 
 [resource]
-script = ExtResource("1_pjif1")
+script = ExtResource("1_28f45")
 waves = Array[Dictionary]([{
 0: 5
 }, {

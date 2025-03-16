@@ -1,13 +1,9 @@
-<<<<<<< HEAD
-[gd_scene load_steps=7 format=3 uid="uid://d36w4k1ad350c"]
+[gd_scene load_steps=7 format=3 uid="uid://boeudptv12elf"]
 
-[ext_resource type="Script" uid="uid://b5kfjxdi1qegx" path="res://scenes/towers/tower_1/tower_1.gd" id="1_egvga"]
-[ext_resource type="PackedScene" uid="uid://cdpf43gwdu62k" path="res://scenes/towers/tower_1/arrow.tscn" id="2_bf3jd"]
-[ext_resource type="PackedScene" path="res://scenes/abilities/attack_ability/tower_attack_ability.tscn" id="3_o3jtd"]
-[ext_resource type="Texture2D" uid="uid://ck2bd707sqdu8" path="res://icon.svg" id="4_6ku1n"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_onc5l"]
-radius = 299.06
+[ext_resource type="Script" path="res://scenes/towers/tower_4/tower_4.gd" id="1_wifa7"]
+[ext_resource type="PackedScene" uid="uid://c315oacc7uj6r" path="res://scenes/towers/tower_4/rock.tscn" id="2_ggc6v"]
+[ext_resource type="PackedScene" uid="uid://bhf1w4dclug5p" path="res://scenes/abilities/attack_ability/tower_attack_ability.tscn" id="3_o3jtd"]
+[ext_resource type="Texture2D" uid="uid://7w5acqq63vnj" path="res://assets/textures/towers/tower_4.png" id="4_ggc6v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ggc6v"]
 bg_color = Color(0.6, 0.6, 0.6, 0.556863)
@@ -15,21 +11,6 @@ corner_radius_top_left = 5000
 corner_radius_top_right = 5000
 corner_radius_bottom_right = 5000
 corner_radius_bottom_left = 5000
-
-[node name="Tower_4" type="Node2D" groups=["rotatable", "tower"]]
-script = ExtResource("1_egvga")
-tower_name = "Wieża łucznicza"
-damage = 1
-time_to_attack = 0.75
-projectile = ExtResource("2_bf3jd")
-projectile_speed = 300.0
-=======
-[gd_scene load_steps=6 format=3 uid="uid://boeudptv12elf"]
-
-[ext_resource type="Script" uid="uid://yjdq5hghjog8" path="res://scenes/towers/tower_4/tower_4.gd" id="1_wifa7"]
-[ext_resource type="PackedScene" uid="uid://pubbonh52jhi" path="res://scenes/towers/tower_4/rock.tscn" id="2_ggc6v"]
-[ext_resource type="PackedScene" uid="uid://bhf1w4dclug5p" path="res://scenes/abilities/attack_ability/tower_attack_ability.tscn" id="3_o3jtd"]
-[ext_resource type="Texture2D" uid="uid://7w5acqq63vnj" path="res://assets/textures/towers/tower_4.png" id="4_ggc6v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onc5l"]
 radius = 287.028
@@ -41,17 +22,20 @@ damage = 6
 projectile = ExtResource("2_ggc6v")
 projectile_speed = 200.0
 cost = 90
->>>>>>> 19497a800198af2172747081ef87a9903964e100
+
+[node name="Area" type="PanelContainer" parent="."]
+offset_left = -289.0
+offset_top = -292.0
+offset_right = 287.0
+offset_bottom = 294.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ggc6v")
 
 [node name="TowerAttackAbility" parent="." instance=ExtResource("3_o3jtd")]
 
 [node name="Sprite" type="Sprite2D" parent="."]
-<<<<<<< HEAD
-texture = ExtResource("4_6ku1n")
-=======
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_ggc6v")
->>>>>>> 19497a800198af2172747081ef87a9903964e100
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 32
@@ -59,13 +43,3 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_onc5l")
-<<<<<<< HEAD
-
-[node name="Area" type="PanelContainer" parent="."]
-offset_left = -301.0
-offset_top = -299.0
-offset_right = 299.0
-offset_bottom = 301.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_ggc6v")
-=======
->>>>>>> 19497a800198af2172747081ef87a9903964e100
