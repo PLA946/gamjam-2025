@@ -3,8 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://dt8702yupi7j6" path="res://scenes/manager/wave_manager/wave_manager.tscn" id="1_fmjld"]
 [ext_resource type="Script" uid="uid://cjp6rdx62nnw2" path="res://scenes/map/level.gd" id="1_ii35b"]
 [ext_resource type="Resource" uid="uid://cvvq1rl4go0km" path="res://scenes/manager/wave_manager/waves/level_1_waves.tres" id="2_gdio5"]
-[ext_resource type="PackedScene" uid="uid://dwkirlgmsfuia" path="res://scenes/towers/tower_1/tower_1.tscn" id="5_vey02"]
+[ext_resource type="Texture2D" uid="uid://dejy2uxrn0hrw" path="res://assets/textures/icons/skull_normal.png" id="5_gbkmt"]
 [ext_resource type="Texture2D" uid="uid://dujkrmtx2e8ep" path="res://assets/tilesets/towerDefense_tilesheet.png" id="5_xbykm"]
+[ext_resource type="Texture2D" uid="uid://bcythy2wl1ens" path="res://assets/textures/icons/skull_hovered.png" id="6_j3gfk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qvs5h"]
 texture = ExtResource("5_xbykm")
@@ -498,6 +499,19 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Tower_1" parent="." instance=ExtResource("5_vey02")]
-position = Vector2(601, 413)
-time_to_attack = 0.5
+[node name="WaveStart" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureButton" type="TextureButton" parent="WaveStart"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 810.0
+offset_right = 67.0
+offset_bottom = 860.0
+texture_normal = ExtResource("5_gbkmt")
+texture_hover = ExtResource("6_j3gfk")
+
+[connection signal="pressed" from="WaveStart/TextureButton" to="." method="_on_wave_start"]

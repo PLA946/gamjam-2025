@@ -11,6 +11,9 @@ var playlist: Array[AudioStream] = [
 var current_track_index: int = 0
 
 func _ready() -> void:
+	AudioControler.play_music(randi_range(0, AudioControler.playlist.size()-1))
+	if AudioControler.bg_music.stream == null:
+		AudioControler.play_music(0)
 	bg_music.volume_linear = 0.3
 	bg_sfx.volume_linear = 0.3
 	

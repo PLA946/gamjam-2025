@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://doswmkfbyotfs"]
 
-[ext_resource type="Texture2D" uid="uid://c843ue4ccn85l" path="res://assets/textures/icons/unchecked.png" id="2_k2fmo"]
+[ext_resource type="Texture2D" uid="uid://uhsmyf38nj8d" path="res://assets/textures/icons/flag_normal.png" id="2_k2fmo"]
 [ext_resource type="Script" uid="uid://ctmf74yf581r7" path="res://scenes/main/level_position.gd" id="2_l3cfh"]
-[ext_resource type="Texture2D" uid="uid://d0v6m88hxcg8l" path="res://assets/textures/icons/checked.png" id="3_l3cfh"]
+[ext_resource type="Texture2D" uid="uid://cv2ovng6doef4" path="res://assets/textures/icons/flag_hovered.png" id="3_l3cfh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3cfh"]
 content_margin_left = 15.0
@@ -42,20 +42,20 @@ script = ExtResource("2_l3cfh")
 [node name="Level_1" type="TextureButton" parent="LevelPosition"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
-offset_left = 418.0
-offset_top = 139.0
-offset_right = 468.0
-offset_bottom = 189.0
+offset_left = 391.0
+offset_top = 138.0
+offset_right = 455.0
+offset_bottom = 202.0
 texture_normal = ExtResource("2_k2fmo")
 texture_hover = ExtResource("3_l3cfh")
 
 [node name="Level_2" type="TextureButton" parent="LevelPosition"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
-offset_left = 195.0
-offset_top = 390.0
-offset_right = 245.0
-offset_bottom = 440.0
+offset_left = 209.0
+offset_top = 375.0
+offset_right = 273.0
+offset_bottom = 439.0
 texture_normal = ExtResource("2_k2fmo")
 texture_hover = ExtResource("3_l3cfh")
 
@@ -82,10 +82,10 @@ texture_hover = ExtResource("3_l3cfh")
 [node name="Level_5" type="TextureButton" parent="LevelPosition"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
-offset_left = 1507.0
-offset_top = 591.0
-offset_right = 1557.0
-offset_bottom = 641.0
+offset_left = 1426.0
+offset_top = 641.0
+offset_right = 1490.0
+offset_bottom = 705.0
 texture_normal = ExtResource("2_k2fmo")
 texture_hover = ExtResource("3_l3cfh")
 
@@ -108,6 +108,12 @@ offset_right = 498.0
 offset_bottom = 424.0
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_l3cfh")
+
+[node name="Overlay" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="mouse_entered" from="LevelPosition/Level_1" to="LevelPosition" method="_on_level_me1"]
 [connection signal="mouse_exited" from="LevelPosition/Level_1" to="LevelPosition" method="_on_level_ex"]

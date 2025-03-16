@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da5hk1wjg8fj6"
-path="res://.godot/imported/lviv.jpg-cfe0010f72f565fbd4a5c47f61676792.ctex"
+uid="uid://bcythy2wl1ens"
+path="res://.godot/imported/skull_hovered.png-7f643a800b759eff87d96cbe8ade9c27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/lviv.jpg"
-dest_files=["res://.godot/imported/lviv.jpg-cfe0010f72f565fbd4a5c47f61676792.ctex"]
+source_file="res://assets/textures/icons/skull_hovered.png"
+dest_files=["res://.godot/imported/skull_hovered.png-7f643a800b759eff87d96cbe8ade9c27.ctex"]
 
 [params]
 

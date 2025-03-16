@@ -9,6 +9,14 @@ extends Control
 	"Level_5": $Level_5, 
 	"Level_6": $Level_6
 }
+@onready var level_paths = {
+	"Level_1": $Background/BgMap/BaseBackground/Path/Path1, 
+	"Level_2": $Background/BgMap/BaseBackground/Path/Path2, 
+	"Level_3": $Background/BgMap/BaseBackground/Path/Path3, 
+	"Level_4": $Background/BgMap/BaseBackground/Path/Path4, 
+	"Level_5": $Background/BgMap/BaseBackground/Path/Path5, 
+	"Level_6": $Background/BgMap/BaseBackground/Path/Path6,
+}
 
 var levels = Data.save_data
 
@@ -19,21 +27,52 @@ func _process(delta):
 
 func _ready():
 	tooltip_label.visible = false
-	var scene = load("res://scenes/main/bg_map.tscn")
-	var instance = scene.instantiate()
-	$"../Background".add_child(instance)
-	Data.load_game()  # Wczytaj dane
+	var bg_map = load("res://scenes/main/bg_map.tscn").instantiate()
+	$"../Background".add_child(bg_map)
+	var main_menu = load("res://scenes/ui/overlay/main_menu.tscn").instantiate()
+	$"../Overlay".add_child(main_menu)
+	
+	await get_tree().process_frame
+	Data.load_game()
+	_find_paths()
 	_update_level_visibility()
+	_update_star_label()
+
+func _find_paths():
+	var bg_map_panel = $"../Background/BgMap"
+	if bg_map_panel:
+		var bg_map_path = bg_map_panel.get_node("BaseBackground/Path")
+		if bg_map_path:
+			level_paths = {
+				"Level_1": bg_map_path.get_node_or_null("Path1"),
+				"Level_2": bg_map_path.get_node_or_null("Path2"),
+				"Level_3": bg_map_path.get_node_or_null("Path3"),
+				"Level_4": bg_map_path.get_node_or_null("Path4"),
+				"Level_5": bg_map_path.get_node_or_null("Path5"),
+				"Level_6": bg_map_path.get_node_or_null("Path6"),
+			}
+
 
 func _update_level_visibility():
 	for level in level_buttons.keys():
-		level_buttons[level].visible = Data.save_data[level]["unlocked"]
+		if level_buttons[level] and level_paths[level]:
+			level_buttons[level].visible = Data.save_data[level]["unlocked"]
+			level_paths[level].visible = Data.save_data[level]["unlocked"]
+
 
 func _update_tooltip(level_name: String):
 	if levels.has(level_name):
 		var level_data = levels[level_name]
-		tooltip_label.text = str(level_data.name) + "\nPoziom: " + str(level_data.lv) + "\nGwiazdki: " + str(level_data.stars) + "\nFale: " + str(level_data.waves_count)
+		tooltip_label.text = str(level_data.name) + "\nPoziom: " + str(int(level_data.lv)) + "\nGwiazdki: " + str(int(level_data.stars)) + "\nFale: " + str(int(level_data.waves_count))
 	tooltip_label.visible = true
+
+
+func _update_star_label():
+	var overlay_panel = $"../Overlay/MainMenu"
+	if overlay_panel:
+		var overlay_path = overlay_panel.get_node("Stars/PanelContainer/HBoxContainer")
+		overlay_path.get_node_or_null("Label").text = "Zdobyte gwiazdki: %s/18" % str(int(GameData.count_total_stars()))
+
 
 
 func _on_level_ex():

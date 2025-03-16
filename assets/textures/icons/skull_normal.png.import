@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvcatlhy33lsy"
-path="res://.godot/imported/lviv4.jpg-61991f7fff04a6891e9212b5fc287be0.ctex"
+uid="uid://dejy2uxrn0hrw"
+path="res://.godot/imported/skull_normal.png-5f89b3a38f44a6e00b876a9957fe315d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/lviv4.jpg"
-dest_files=["res://.godot/imported/lviv4.jpg-61991f7fff04a6891e9212b5fc287be0.ctex"]
+source_file="res://assets/textures/icons/skull_normal.png"
+dest_files=["res://.godot/imported/skull_normal.png-5f89b3a38f44a6e00b876a9957fe315d.ctex"]
 
 [params]
 

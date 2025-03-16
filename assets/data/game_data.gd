@@ -13,7 +13,8 @@ func hp_decrease(damage_amount: int):
 
 
 func set_current_level(level: String):
-	current_level = level
+	if Data.save_data.has(level):
+		current_level = level
 
 
 func level_completed(hp):
@@ -29,5 +30,13 @@ func level_completed(hp):
 		stars = 0
 	stars = max(stars, previous_stars)
 	Data.update_level(GameData.current_level, stars, true)
-	Data.unlock_next_level()
+	Data.unlock_next_level(GameData.current_level)
 	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
+
+
+func count_total_stars():
+	var total_stars = 0
+	for level in Data.save_data.keys():
+		total_stars += Data.save_data[level].get("stars", 0)
+	return total_stars
+	
