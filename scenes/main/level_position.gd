@@ -85,4 +85,4 @@ func _on_level_6():
 	start_level("Level_6")
 
 func start_level(level_name: String):
-	get_tree().change_scene_to_file("res://scenes/map/%s.tscn" % level_name)
+	get_tree().change_scene_to_file("res://scenes/map/%s.tscn" % level_name.to_lower())

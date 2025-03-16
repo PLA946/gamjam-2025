@@ -5,12 +5,13 @@ extends Control
 @onready var money = $View/VBoxContainer/HBoxContainer/PanelContainer2/HBoxContainer2/Label
 @onready var pause = $Pause
 
-var hp: int = 20
+var hp: int = GameData.current_hp
 var current_wave: int = 0
 var levels = Data.save_data
 
 func _ready() -> void:
 	pause.visible = false
+	GameEvents.enemy_through.connect(call_update)
 
 func _on_resume() -> void:
 	pause.visible = false
@@ -20,11 +21,14 @@ func _on_resume() -> void:
 
 func _on_quit() -> void:
 	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
-	
+
 
 func _on_pause() -> void:
 	pause.visible = true
 
+func call_update(__):
+	hp = GameData.current_hp
+	update_data(GameData.current_level)
 
 func update_data(level_key: String):
 	if levels.has(level_key):

@@ -8,11 +8,15 @@ class_name Entity
 @export var time_to_attack: int = 1
 
 func _ready() -> void:
-	GameEvents.attack.connect(receive_damage)
+	#GameEvents.attack.connect(receive_damage)
+	$HealthBar/ProgressBar.max_value = hp
+	$HealthBar/ProgressBar.value = hp
+	pass
 
 
-func receive_damage(target: Entity, amount: int):
-	hp = max(hp, 0)
+func receive_damage(damage_amount: int):
+	hp = max(hp - damage_amount, 0)
+	$HealthBar/ProgressBar.value = hp
 	if hp == 0:
 		queue_free()
 		

@@ -3,6 +3,15 @@ extends Node
 var current_level: String = ""
 var current_hp: int = 20
 
+func _ready() -> void:
+	GameEvents.enemy_through.connect(hp_decrease)
+
+func hp_decrease(damage_amount: int):
+	current_hp = max(current_hp - damage_amount, 0)
+	if current_hp == 0:
+		GameEvents.emit_game_lost()
+
+
 func set_current_level(level: String):
 	current_level = level
 
