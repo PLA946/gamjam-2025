@@ -32,13 +32,14 @@ func attack():
 				var b_progress = b.get_parent().progress_ratio
 				return a_progress > b_progress
 			)
-			for i in enemies_in_range:
-				print(i.get_parent().progress_ratio)
 		
 		var projectile = (get_parent().projectile.instantiate() as Node2D)
 		get_parent().add_child(projectile)
 		projectile.global_position = get_parent().global_position
-		projectile.rotation = (enemies_in_range[0].global_position - get_parent().global_position).angle()
+		var rotation = (enemies_in_range[0].global_position - get_parent().global_position).angle()
+		projectile.rotation = rotation
+		if get_parent().is_in_group("rotatable"):
+			get_parent().rotation = rotation
 		projectile.fly_to(enemies_in_range[0])
 		
 	

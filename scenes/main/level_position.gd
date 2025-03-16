@@ -61,6 +61,7 @@ func _update_level_visibility():
 
 
 func _update_tooltip(level_name: String):
+	GameEvents.emit_change_level_hover()
 	if levels.has(level_name):
 		var level_data = levels[level_name]
 		tooltip_label.text = str(level_data.name) + "\nPoziom: " + str(int(level_data.lv)) + "\nGwiazdki: " + str(int(level_data.stars)) + "\nFale: " + str(int(level_data.waves_count))
