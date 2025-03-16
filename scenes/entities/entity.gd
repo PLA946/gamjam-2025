@@ -23,5 +23,4 @@ func receive_damage(damage_amount: int):
 
 func died():
 	if is_in_group("enemy"):
-		print('enemy downing')
 		GameEvents.emit_enemy_down()

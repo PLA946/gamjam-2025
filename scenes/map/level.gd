@@ -10,7 +10,6 @@ func _ready() -> void:
 	var overlay = load("res://scenes/ui/overlay/overlay.tscn").instantiate()
 	$Overlay.add_child(overlay) 
 	overlay.update_data(current_level)
-	#wave_start.emit(0)
 	GameData.set_current_level(get_name())
 	GameEvents.enemy_down.connect(enemy_down)
 
@@ -21,8 +20,6 @@ func _on_wave_start() -> void:
 	wave_started = true
 
 func enemy_down():
-	print('checking enemies')
 	if len(get_tree().get_nodes_in_group("enemy")) == 0:
-		print('no enemes')
 		wave_started = false
 		$WaveStart.visible = true
