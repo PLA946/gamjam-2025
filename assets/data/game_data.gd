@@ -23,3 +23,11 @@ func level_completed(hp):
 	Data.update_level(GameData.current_level, stars, true)
 	Data.unlock_next_level(GameData.current_level)
 	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
+
+
+func count_total_stars():
+	var total_stars = 0
+	for level in Data.save_data.keys():
+		total_stars += Data.save_data[level].get("stars", 0)
+	return total_stars
+	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bg2k7cwdy2y1w"]
+[gd_scene load_steps=18 format=3 uid="uid://bg2k7cwdy2y1w"]
 
 [ext_resource type="Texture2D" uid="uid://brwwq7grjlyqk" path="res://assets/textures/menu.jpg" id="1_h1w4e"]
 [ext_resource type="Script" uid="uid://cp8t6xavkjnan" path="res://scenes/ui/menu/menu.gd" id="1_ldhvw"]
@@ -37,6 +37,28 @@ corner_radius_bottom_left = 20
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2nsh4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_afxhl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nsh4"]
+content_margin_left = 5.0
+content_margin_top = 10.0
+content_margin_right = 5.0
+content_margin_bottom = 10.0
+bg_color = Color(0.00133003, 0.0944871, 0.0795241, 0.823529)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1316l"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0.905882, 0, 0.0705882, 0.823529)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -110,11 +132,9 @@ expand_mode = 1
 [node name="Option" type="Control" parent="."]
 visible = false
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_r4xos")
@@ -164,6 +184,7 @@ step = 0.01
 value = 0.3
 
 [node name="SFXVBoxContainer" type="VBoxContainer" parent="Option/PanelContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="SFXLabel" type="Label" parent="Option/PanelContainer/VBoxContainer/SFXVBoxContainer"]
@@ -227,6 +248,19 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_afxhl")
 theme_override_icons/checked = ExtResource("7_047m5")
 theme_override_icons/unchecked = ExtResource("8_1316l")
 
+[node name="RemoveSaveVBoxContainer" type="VBoxContainer" parent="Option/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="RemoveButton" type="Button" parent="Option/PanelContainer/VBoxContainer/RemoveSaveVBoxContainer"]
+custom_minimum_size = Vector2(360, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxFlat_2nsh4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1316l")
+text = "Wyczyść dane zapisu"
+
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start"]
 [connection signal="pressed" from="VBoxContainer/OptionButton" to="." method="_on_option"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit"]
@@ -236,3 +270,4 @@ theme_override_icons/unchecked = ExtResource("8_1316l")
 [connection signal="pressed" from="Option/PanelContainer/VBoxContainer/ModeVBoxContainer/HBoxContainer/WindowedCheckBox" to="Option" method="_on_windowed"]
 [connection signal="pressed" from="Option/PanelContainer/VBoxContainer/ModeVBoxContainer/HBoxContainer/MaximizedCheckBox" to="Option" method="_on_maximized"]
 [connection signal="pressed" from="Option/PanelContainer/VBoxContainer/ModeVBoxContainer/HBoxContainer/FullscreenCheckBox" to="Option" method="_on_fullscreen"]
+[connection signal="pressed" from="Option/PanelContainer/VBoxContainer/RemoveSaveVBoxContainer/RemoveButton" to="." method="_on_remove_save"]

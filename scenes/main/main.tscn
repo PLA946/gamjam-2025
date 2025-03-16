@@ -109,6 +109,12 @@ offset_bottom = 424.0
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_l3cfh")
 
+[node name="Overlay" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="mouse_entered" from="LevelPosition/Level_1" to="LevelPosition" method="_on_level_me1"]
 [connection signal="mouse_exited" from="LevelPosition/Level_1" to="LevelPosition" method="_on_level_ex"]
 [connection signal="pressed" from="LevelPosition/Level_1" to="LevelPosition" method="_on_level_1"]

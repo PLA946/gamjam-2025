@@ -38,6 +38,18 @@ func load_game():
 		save_data = Base_Levels.duplicate(true)
 	save_game()
 
+func restart_game():
+	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	if file:
+		file.store_string("{}")
+		file.close()
+	save_data = Base_Levels.duplicate(true)
+	save_game()
+
+	print("Gra została zresetowana.")
+
+	
+
 
 func update_level(level_name: String, stars: int, unlocked: bool):
 	if Data.save_data.has(level_name):

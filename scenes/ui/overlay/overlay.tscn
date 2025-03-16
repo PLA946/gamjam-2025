@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dtymnua7uo7km"]
 
 [ext_resource type="Script" uid="uid://cg7yeg21qlmli" path="res://scenes/ui/overlay/overlay.gd" id="1_81t38"]
-[ext_resource type="StyleBox" uid="uid://gdou5ofvpiko" path="res://l.tres" id="1_mqy0c"]
+[ext_resource type="StyleBox" uid="uid://db21yli1key1v" path="res://l.tres" id="1_mqy0c"]
 [ext_resource type="Texture2D" uid="uid://dmemlmk5jkfuo" path="res://assets/textures/icons/heart.png" id="2_5qngs"]
 [ext_resource type="Texture2D" uid="uid://bg2gxdm2t7hma" path="res://assets/textures/icons/money.png" id="3_ugq8m"]
 [ext_resource type="Texture2D" uid="uid://chyej82623xsb" path="res://assets/textures/icons/skull.png" id="4_81t38"]
@@ -120,6 +120,7 @@ texture_hover = ExtResource("6_81t38")
 stretch_mode = 5
 
 [node name="Pause" type="Control" parent="."]
+visible = false
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 1
 anchors_preset = 0
@@ -151,16 +152,23 @@ theme_override_font_sizes/font_size = 100
 text = "Gra została wstrzymana"
 metadata/_edit_group_ = true
 
+[node name="ResumeButton" type="Button" parent="Pause/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 50
+text = "Wznów"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="Pause/PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="ResumeButton" type="Button" parent="Pause/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="ResetButton" type="Button" parent="Pause/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 4
 theme_override_font_sizes/font_size = 50
-text = "Wznów"
+text = "Resetuj"
 
 [node name="QuitButton" type="Button" parent="Pause/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -169,6 +177,61 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 50
 text = "Wróć do mapy"
 
+[node name="Lose" type="Control" parent="."]
+visible = false
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Lose"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -618.5
+offset_top = -162.0
+offset_right = 618.5
+offset_bottom = 162.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ugq8m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Lose/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="Lose/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Gra została wstrzymana"
+metadata/_edit_group_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Lose/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="ResetButton" type="Button" parent="Lose/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 50
+text = "Resetuj"
+
+[node name="QuitButton" type="Button" parent="Lose/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 50
+text = "Wróć do mapy"
+
 [connection signal="pressed" from="View/TextureButton" to="." method="_on_pause"]
-[connection signal="pressed" from="Pause/PanelContainer/VBoxContainer/HBoxContainer/ResumeButton" to="." method="_on_resume"]
+[connection signal="pressed" from="Pause/PanelContainer/VBoxContainer/ResumeButton" to="." method="_on_resume"]
+[connection signal="pressed" from="Pause/PanelContainer/VBoxContainer/HBoxContainer/ResetButton" to="." method="_on_reset"]
 [connection signal="pressed" from="Pause/PanelContainer/VBoxContainer/HBoxContainer/QuitButton" to="." method="_on_quit"]
+[connection signal="pressed" from="Lose/PanelContainer/VBoxContainer/HBoxContainer/ResetButton" to="." method="_on_reset"]
+[connection signal="pressed" from="Lose/PanelContainer/VBoxContainer/HBoxContainer/QuitButton" to="." method="_on_quit"]

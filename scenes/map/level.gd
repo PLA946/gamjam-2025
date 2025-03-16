@@ -12,3 +12,7 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	GameData.set_current_level(get_name())
+
+
+func _on_wave_start() -> void:
+	$WaveStart.visible = false

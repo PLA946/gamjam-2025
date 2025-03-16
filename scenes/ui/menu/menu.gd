@@ -1,10 +1,6 @@
 extends Control
 
 func _ready() -> void:
-	AudioControler.play_music(randi_range(0, AudioControler.playlist.size()-1))
-	if AudioControler.bg_music.stream == null:
-		AudioControler.play_music(0)
-		
 	$Option.visible = false
 
 func _on_start() -> void:
@@ -17,3 +13,8 @@ func _on_option() -> void:
 
 func _on_exit() -> void:
 	get_tree().quit()
+
+
+func _on_remove_save() -> void:
+	$Option.visible = false
+	Data.restart_game()
