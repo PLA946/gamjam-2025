@@ -25,3 +25,5 @@ func receive_damage(damage_amount: int):
 func died():
 	if is_in_group("enemy"):
 		GameEvents.emit_enemy_down()
+		Data.save_data[GameData.current_level]["money"] += gold_drop
+		GameEvents.emit_update_overlay()

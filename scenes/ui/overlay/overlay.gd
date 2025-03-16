@@ -11,7 +11,10 @@ var levels = Data.save_data
 
 func _ready() -> void:
 	GameEvents.enemy_through.connect(call_update)
+	GameEvents.update_overlay.connect(call_update)
 	GameEvents.level_victory.connect(on_victory)
+	GameEvents.game_lost.connect(on_lose)
+	GameEvents.wave_change.connect(wave_change)
 
 func _on_resume() -> void:
 	pause.visible = false
@@ -51,3 +54,7 @@ func on_lose():
 
 func on_victory():
 	GameData.level_completed(hp)
+
+func wave_change(num: int):
+	current_wave = num
+	update_data(GameData.current_level)

@@ -2,24 +2,24 @@
 
 [ext_resource type="Script" uid="uid://ds7a2fp4q7iq1" path="res://scenes/entities/enemies/enemy.gd" id="1_2qq7g"]
 [ext_resource type="PackedScene" uid="uid://dy12nfhdpmu0o" path="res://scenes/abilities/attack_ability/attack_ability.tscn" id="2_8xp24"]
-[ext_resource type="Texture2D" uid="uid://ck2bd707sqdu8" path="res://icon.svg" id="3_37pbh"]
+[ext_resource type="Texture2D" uid="uid://cnxhf4lqpkglt" path="res://assets/textures/enemies/enemy_4.png" id="3_2qq7g"]
 [ext_resource type="PackedScene" uid="uid://dpl5c47fpc3b4" path="res://scenes/entities/health_bar.tscn" id="4_a81cm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jacwl"]
-radius = 50.0
+radius = 68.0294
 
 [node name="Enemy_4" type="Node2D" groups=["enemy"]]
 script = ExtResource("1_2qq7g")
 entity_name = "Berserker"
-hp = 20
+hp = 25
 damage = 2
 speed = 40
 
 [node name="AttackAbility" parent="." instance=ExtResource("2_8xp24")]
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_37pbh")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_2qq7g")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2

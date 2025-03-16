@@ -17,6 +17,7 @@ func _on_wave_start() -> void:
 	$WaveStart.visible = false
 	wave_start.emit(current_wave)
 	current_wave += 1
+	GameEvents.emit_wave_change(current_wave)
 	wave_started = true
 
 func enemy_down():
@@ -25,3 +26,4 @@ func enemy_down():
 		$WaveStart.visible = true
 		if current_wave == Data.save_data[current_level]["waves_count"]:
 			GameEvents.emit_level_victory()
+			

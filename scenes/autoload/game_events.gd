@@ -6,6 +6,8 @@ signal enemy_down()
 signal game_lost()
 signal change_level_hover()
 signal level_victory()
+signal update_overlay()
+signal wave_change(wavenum: int)
 
 func emit_attack_signal(damage_amount: int):
 	attack.emit(damage_amount)
@@ -24,3 +26,9 @@ func emit_change_level_hover():
 
 func emit_level_victory():
 	level_victory.emit()
+
+func emit_update_overlay():
+	update_overlay.emit()
+	
+func emit_wave_change(num: int):
+	wave_change.emit(num)
