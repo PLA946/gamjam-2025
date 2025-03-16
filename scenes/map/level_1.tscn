@@ -504,21 +504,41 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="WaveStart" type="Control" parent="."]
+[node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1920.0
+offset_bottom = 1057.0
 
-[node name="TextureButton" type="TextureButton" parent="WaveStart"]
-layout_mode = 0
-offset_left = 17.0
-offset_top = 810.0
-offset_right = 67.0
-offset_bottom = 860.0
-texture_normal = ExtResource("5_gbkmt")
-texture_hover = ExtResource("6_j3gfk")
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -196.0
+offset_top = -128.0
+offset_right = 196.0
+grow_horizontal = 2
+grow_vertical = 0
 
-[node name="Control" parent="." instance=ExtResource("8_j3gfk")]
+[node name="Tower1" type="TextureRect" parent="Control/HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("8_j3gfk")
+expand_mode = 1
+
+[node name="Tower2" type="TextureRect" parent="Control/HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("8_j3gfk")
+expand_mode = 1
+
+[node name="Tower3" type="TextureRect" parent="Control/HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("8_j3gfk")
+expand_mode = 1
 
 [connection signal="pressed" from="WaveStart/TextureButton" to="." method="_on_wave_start"]

@@ -11,11 +11,12 @@ var levels = Data.save_data
 
 func _ready() -> void:
 	GameEvents.enemy_through.connect(call_update)
+	GameEvents.level_victory.connect(on_victory)
 
 func _on_resume() -> void:
 	pause.visible = false
 	get_tree().paused = false
-	on_victory()
+	#on_victory()
 
 func _on_quit() -> void:
 	get_tree().paused = false
