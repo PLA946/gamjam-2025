@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://6ijcyqfw2e57"]
+
+[ext_resource type="Script" uid="uid://bltlybb3a3go3" path="res://scenes/towers/tower.gd" id="1_by3tn"]
+
+[node name="Tower" type="Node2D"]
+script = ExtResource("1_by3tn")
+projectile_speed = 800.0
